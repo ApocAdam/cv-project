@@ -1,0 +1,11 @@
+.header {
+    background-color: deepskyblue;
+}
+
+.main {
+    display: flex;
+}
+
+.personalInfo {
+    display: grid;
+}
