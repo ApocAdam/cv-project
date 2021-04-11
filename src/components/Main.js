@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Preview from "./Preview"
 
-class PersonalInfo extends Component {
+class Main extends Component {
 
     constructor(props) {
         super(props)
     
         this.state = {
+            buttonclicked : "false",
             Name: "",
             Phone: "",
             Email: "",
@@ -24,6 +25,7 @@ class PersonalInfo extends Component {
     render() {
         return (
             <div>
+                <button>Preview</button>
                 <div className="main">
                     <div>
                         <p>Personal Information</p>                        
@@ -56,4 +58,4 @@ class PersonalInfo extends Component {
     }
 }
 
-export default PersonalInfo;
+export default Main;
