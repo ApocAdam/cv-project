@@ -15,10 +15,20 @@ export default class Main extends Component {
             Github: 4,
             Linkedin: 5,
         }
+
+        this.educationMap = {
+            University: 0,
+            Location: 1,
+            Degree: 2,
+            Subject: 3,
+            From: 4,
+            To: 5
+        }
     
         this.state = {
              view: true, // true represents editor mode
-             personalInfo: ["", "", "", "", "" , ""]
+             personalInfo: ["", "", "", "", "" , ""],
+             education: ["", "", "", "", "" , ""]
         }
     }
 
@@ -34,13 +44,24 @@ export default class Main extends Component {
         })
     }
 
-    handlePersonalChange = (e) => {
-        const newPI = this.state.personalInfo.slice()
-        newPI[this.personalInfoMap[e.target.placeholder]] = e.target.value
-        this.setState({
-            personalInfo: newPI
-        })
+    handleChange = (e) => {
+        if (e.target.dataset.type === "personalInfo") {
+            const newPI = this.state.personalInfo.slice()
+            newPI[this.personalInfoMap[e.target.placeholder]] = e.target.value
+            this.setState({
+                personalInfo: newPI
+            })
+        }
+        if (e.target.dataset.type === "education") {
+            const educopy = this.state.education.slice()
+            educopy[this.educationMap[e.target.placeholder]] = e.target.value
+            this.setState({
+                education: educopy
+            })
+        }
     }
+
+    
     
     
     render() {
@@ -49,7 +70,7 @@ export default class Main extends Component {
             <div>
                 <button onClick={this.loadEditor}>Editor</button>
                 <button onClick={this.loadPreview}>Preview</button>
-                {this.state.view ? <Editor personalInfo={this.state.personalInfo} handlePersonalChange={this.handlePersonalChange}/> : <Preview personalInfo={this.state.personalInfo}/>}
+                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
             </div>
         )
     }
