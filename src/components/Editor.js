@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Preview() {
+function Editor() {
     return (
         <div id="Preview">
-            <p>Preview</p>
+            <p>Editor</p>
         </div>
     )
 }
 
-export default Preview
+export default Editor;

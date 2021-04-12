@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div>
-            <p>Footer</p>
+        <div className="header">
+            Created by Adam Chappell
         </div>
     )
 }
