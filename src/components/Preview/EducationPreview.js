@@ -3,7 +3,6 @@ import React from 'react'
 function EducationPreview(props) {
     return (
         <div>
-            <p>Education</p>
             <ul>
                 <li data-educationnumber={props.educationNumber}>University: {props.education[0]}</li>
                 <li data-educationnumber={props.educationNumber}>Location: {props.education[1]}</li>

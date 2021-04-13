@@ -28,8 +28,7 @@ export default class Main extends Component {
         this.state = {
              view: true, // true represents editor mode
              personalInfo: ["", "", "", "", "" , ""],
-             education: [["", "", "", "", "" , ""]],
-             educationCount: 1
+             education: []
         }
     }
 
@@ -63,12 +62,22 @@ export default class Main extends Component {
     }
 
     addEducation = () => {
-        const educopy = this.state.education.slice()
+        let educopy = this.state.education.slice()
         const newEducation = ["", "", "", "", "" , ""]
         educopy.push(newEducation)
         this.setState({
             education: educopy
         })
+    }
+
+    deleteEducation = (e) => {
+        if (e.target.dataset.type === "education") {
+            let eduCopy = this.state.education
+            eduCopy.splice(e.target.dataset.educationnumber, 1)
+            this.setState({
+                education: eduCopy
+            })
+        }
     }
     
     render() {
@@ -77,7 +86,7 @@ export default class Main extends Component {
             <div>
                 <button onClick={this.loadEditor}>Editor</button>
                 <button onClick={this.loadPreview}>Preview</button>
-                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} handleChange={this.handleChange}/><button onClick={this.addEducation}>Add</button></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
+                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} delete={this.deleteEducation} handleChange={this.handleChange}/><button onClick={this.addEducation}>Add</button></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
             </div>
         )
     }
