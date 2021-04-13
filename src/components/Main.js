@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Preview from "./Preview"
-import Editor from "./Editor"
+import Preview from "./Preview/Preview"
+import Editor from "./Editor/Editor"
 
 export default class Main extends Component {
 
@@ -20,7 +20,7 @@ export default class Main extends Component {
             University: 0,
             Location: 1,
             Degree: 2,
-            Subject: 3,
+            Major: 3,
             From: 4,
             To: 5
         }
@@ -28,7 +28,8 @@ export default class Main extends Component {
         this.state = {
              view: true, // true represents editor mode
              personalInfo: ["", "", "", "", "" , ""],
-             education: ["", "", "", "", "" , ""]
+             education: [["", "", "", "", "" , ""]],
+             educationCount: 1
         }
     }
 
@@ -46,22 +47,29 @@ export default class Main extends Component {
 
     handleChange = (e) => {
         if (e.target.dataset.type === "personalInfo") {
-            const newPI = this.state.personalInfo.slice()
-            newPI[this.personalInfoMap[e.target.placeholder]] = e.target.value
+            const piCopy = this.state.personalInfo.slice()
+            piCopy[this.personalInfoMap[e.target.placeholder]] = e.target.value
             this.setState({
-                personalInfo: newPI
+                personalInfo: piCopy
             })
         }
         if (e.target.dataset.type === "education") {
             const educopy = this.state.education.slice()
-            educopy[this.educationMap[e.target.placeholder]] = e.target.value
+            educopy[parseInt(e.target.dataset.educationnumber)][this.educationMap[e.target.placeholder]] = e.target.value
             this.setState({
                 education: educopy
             })
         }
     }
 
-    
+    addEducation = () => {
+        const educopy = this.state.education.slice()
+        const newEducation = ["", "", "", "", "" , ""]
+        educopy.push(newEducation)
+        this.setState({
+            education: educopy
+        })
+    }
     
     render() {
 
@@ -69,7 +77,7 @@ export default class Main extends Component {
             <div>
                 <button onClick={this.loadEditor}>Editor</button>
                 <button onClick={this.loadPreview}>Preview</button>
-                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
+                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} handleAdd={this.addEducation} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
             </div>
         )
     }
