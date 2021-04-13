@@ -11,7 +11,7 @@ function EducationEditor(props) {
             <input type="text" data-educationnumber={props.educationNumber} data-type="education" placeholder="From" value={props.education[4]} onChange={props.handleChange}></input>
             <input type="text" data-educationnumber={props.educationNumber} data-type="education" placeholder="To" value={props.education[5]} onChange={props.handleChange}></input>
             <br></br>
-            <button onClick={props.addEducation}>Add</button>
+            <button onClick={console.log("Delete")}>Delete</button>
         </div>
     )
 }

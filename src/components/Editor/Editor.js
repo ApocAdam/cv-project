@@ -7,7 +7,7 @@ function Editor(props) {
     function educationEditorFactory() {
         let educationEditors = []
         for (let i = 0; i < props.education.length; i++) {
-            educationEditors.push(<EducationEditor key={i} educationNumber={i} education={props.education[i]} handleChange={props.handleChange} addEducation={props.handleAdd}/>)
+            educationEditors.push(<EducationEditor key={i} educationNumber={i} education={props.education[i]} handleChange={props.handleChange}/>)
         }
         return educationEditors;
     }

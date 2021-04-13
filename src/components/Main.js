@@ -77,7 +77,7 @@ export default class Main extends Component {
             <div>
                 <button onClick={this.loadEditor}>Editor</button>
                 <button onClick={this.loadPreview}>Preview</button>
-                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} handleAdd={this.addEducation} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
+                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} handleChange={this.handleChange}/><button onClick={this.addEducation}>Add</button></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
             </div>
         )
     }
