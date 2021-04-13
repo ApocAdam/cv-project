@@ -2,20 +2,20 @@ import React from 'react'
 import EducationEditor from './EducationEditor'
 import PersonalInfoEditor from "./PersonalInfo"
 
-function Editor(props) { // replace hardcoded placeholders with references to maps
+function Editor(props) {
 
-    function test() {
-        let a = []
+    function educationEditorFactory() {
+        let educationEditors = []
         for (let i = 0; i < props.education.length; i++) {
-            a.push(<EducationEditor key={i} educationNumber={i} education={props.education[i]} handleChange={props.handleChange} addEducation={props.handleAdd}/>)
+            educationEditors.push(<EducationEditor key={i} educationNumber={i} education={props.education[i]} handleChange={props.handleChange} addEducation={props.handleAdd}/>)
         }
-        return a;
+        return educationEditors;
     }
 
     return (
         <div id="Preview">
             <PersonalInfoEditor personalInfo={props.personalInfo} handleChange={props.handleChange} />
-            {test()}
+            {educationEditorFactory()}
         </div>
     )
 }

@@ -4,18 +4,18 @@ import EducationPreview from "./EducationPreview"
 
 function Preview(props) {
 
-    function test2() {
-        let a = []
+    function educationPreviewFactory() {
+        let educationPreviews = []
         for (let i = 0; i < props.education.length; i++) {
-            a.push(<EducationPreview key={i} educationNumber={i} education={props.education[i]} />)
+            educationPreviews.push(<EducationPreview key={i} educationNumber={i} education={props.education[i]} />)
         }
-        return a;
+        return educationPreviews;
     }
 
     return (
         <div id="Preview">
             <PersonalInfoPreview personalInfo={props.personalInfo} />
-            {test2()}
+            {educationPreviewFactory()}
         </div>
     )
 }
