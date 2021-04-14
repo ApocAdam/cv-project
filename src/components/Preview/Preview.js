@@ -11,11 +11,11 @@ function Preview(props) {
         }
         return educationPreviews;
     }
-    //Make so that education is only rendered if there is one + preivew
+    
     return (
         <div id="Preview">
             <PersonalInfoPreview personalInfo={props.personalInfo} />
-            <p>Education</p>
+            {props.education.length > 0 && <p>Education</p>}
             {educationPreviewFactory()}
         </div>
     )

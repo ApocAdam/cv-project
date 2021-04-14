@@ -24,11 +24,20 @@ export default class Main extends Component {
             From: 4,
             To: 5
         }
+
+        this.workMap = {
+            Company: 0,
+            Position: 1,
+            Location: 2,
+            From: 3,
+            To: 4
+        }
     
         this.state = {
              view: true, // true represents editor mode
              personalInfo: ["", "", "", "", "" , ""],
-             education: []
+             education: [],
+             work: []
         }
     }
 
@@ -44,7 +53,7 @@ export default class Main extends Component {
         })
     }
 
-    handleChange = (e) => {
+    handleChange = (e) => { //use switch?, replace consts, potentially condense code?
         if (e.target.dataset.type === "personalInfo") {
             const piCopy = this.state.personalInfo.slice()
             piCopy[this.personalInfoMap[e.target.placeholder]] = e.target.value
@@ -57,6 +66,13 @@ export default class Main extends Component {
             educopy[parseInt(e.target.dataset.educationnumber)][this.educationMap[e.target.placeholder]] = e.target.value
             this.setState({
                 education: educopy
+            })
+        }
+        if (e.target.dataset.type === "work") {
+            let workCopy = this.state.work.slice()
+            workCopy[parseInt(e.target.dataset.worknumber)][this.workMap[e.target.placeholder]] = e.target.value
+            this.setState({
+                work: workCopy
             })
         }
     }
@@ -79,14 +95,33 @@ export default class Main extends Component {
             })
         }
     }
-    
+
+    addWork = () => {
+        let workCopy = this.state.work.slice()
+        const newWork = ["", "", "", "", ""]
+        workCopy.push(newWork)
+        this.setState({
+            work: workCopy
+        })
+    }
+
+    deleteWork = (e) => {
+        if (e.target.dataset.type === "work") {
+            let workCopy = this.state.work
+            workCopy.splice(e.target.dataset.worknumber, 1)
+            this.setState({
+                work: workCopy
+            })
+        }
+    }
+
     render() {
 
         return (
             <div>
                 <button onClick={this.loadEditor}>Editor</button>
                 <button onClick={this.loadPreview}>Preview</button>
-                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} delete={this.deleteEducation} handleChange={this.handleChange}/><button onClick={this.addEducation}>Add</button></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
+                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work} deleteEducation={this.deleteEducation} addEducation={this.addEducation} deleteWork={this.deleteWork} addWork={this.addWork} handleChange={this.handleChange}/></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education}/>}
             </div>
         )
     }
