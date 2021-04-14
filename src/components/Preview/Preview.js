@@ -1,6 +1,7 @@
 import React from 'react'
 import PersonalInfoPreview from "./PersonalInfoPreview"
 import EducationPreview from "./EducationPreview"
+import WorkPreview from './WorkPreview'
 
 function Preview(props) {
 
@@ -11,12 +12,22 @@ function Preview(props) {
         }
         return educationPreviews;
     }
+
+    function workPreviewFactory() {
+        let workPreviews = []
+        for (let i = 0; i < props.work.length; i++) {
+            workPreviews.push(<WorkPreview key={i} workNumber={i} work={props.work[i]} />)
+        }
+        return workPreviews;
+    }
     
     return (
         <div id="Preview">
             <PersonalInfoPreview personalInfo={props.personalInfo} />
             {props.education.length > 0 && <p>Education</p>}
             {educationPreviewFactory()}
+            {props.work.length > 0 && <p>Work</p>}
+            {workPreviewFactory()}
         </div>
     )
 }
