@@ -1,11 +1,27 @@
 .header {
     background-color: deepskyblue;
+    text-align: center;
 }
 
 .main {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .personalInfo {
     display: grid;
+}
+
+.centering {
+    text-align: center;
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+}
+
+.mainColour {
+    background-color: lightgray;
 }

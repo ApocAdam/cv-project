@@ -2,8 +2,7 @@ import React from 'react'
 
 function PersonalInfoEditor(props) {
     return (
-        <div>
-            <p>Personal Information</p>
+        <div className="main">
             <input type="text" data-type="personalInfo" placeholder="Name" value={props.personalInfo[0]} onChange={props.handleChange}></input>
             <input type="text" data-type="personalInfo" placeholder="Phone" value={props.personalInfo[1]} onChange={props.handleChange}></input>
             <input type="text" data-type="personalInfo" placeholder="Address" value={props.personalInfo[2]} onChange={props.handleChange}></input>
