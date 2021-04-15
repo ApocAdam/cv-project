@@ -27,8 +27,8 @@ export default class Main extends Component {
 
         this.workMap = {
             Company: 0,
-            Position: 1,
-            Location: 2,
+            Location: 1,
+            Position: 2,
             From: 3,
             To: 4
         }

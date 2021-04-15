@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 30px;
+    border-color: rgb(133, 133, 133);
 }
 
 .personalInfo {
@@ -44,8 +46,8 @@
     text-align: center;
 }
 
-.education {
-    text-decoration: underline;
+.educationHeader, .workHeader {
+    /* text-decoration: underline; */
     margin-left: 20mm;
     margin-right: 20mm;
     font-size: 1.5em;
@@ -53,4 +55,21 @@
 
 .margin {
     margin-left: 20mm;
+    margin-right: 20mm;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.textInput {
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border-color: rgb(133, 133, 133);
+    border-style: solid;
 }
