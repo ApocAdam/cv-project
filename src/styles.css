@@ -1,4 +1,23 @@
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
+    flex: 0 1 auto;
+    background-color: deepskyblue;
+    text-align: center;
+}
+
+.main {
+    flex: 1 1 auto;
+    background-color: lightgray;
+    justify-items: center;
+}
+
+.footer {
+    flex: 0 1 auto;
     background-color: deepskyblue;
     text-align: center;
 }
@@ -20,13 +39,9 @@
 }
 
 .test {
+    padding-top: 20px;
     display: flex;
     justify-content: center;
-}
-
-.mainColour {
-    background-color: lightgray;
-    justify-items: center;
 }
 
 .preview {
@@ -46,7 +61,7 @@
     text-align: center;
 }
 
-.educationHeader, .workHeader {
+.previewHeader {
     /* text-decoration: underline; */
     margin-left: 20mm;
     margin-right: 20mm;
@@ -67,9 +82,18 @@
 }
 
 .textInput {
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 5px;
     margin-bottom: 5px;
     border-color: rgb(133, 133, 133);
     border-style: solid;
+}
+
+.addButtons, .deleteButtons {
+    width: 100%;
+    font-size: 25px;
+}
+
+.displayButtons {
+    font-size: 30px;
 }

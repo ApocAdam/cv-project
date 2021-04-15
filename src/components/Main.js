@@ -118,12 +118,12 @@ export default class Main extends Component {
     render() {
 
         return (
-            <div className="mainColour">
+            <div className="main">
                 <div className="test">
-                    <button onClick={this.loadEditor}>Editor</button>
-                    <button onClick={this.loadPreview}>Preview</button>
+                    <button className="displayButtons" onClick={this.loadEditor}>Editor</button>
+                    <button className="displayButtons" onClick={this.loadPreview}>Preview</button>
                 </div>
-                {this.state.view ? <div><Editor personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work} deleteEducation={this.deleteEducation} addEducation={this.addEducation} deleteWork={this.deleteWork} addWork={this.addWork} handleChange={this.handleChange}/></div> : <Preview personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work}/>}
+                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work} deleteEducation={this.deleteEducation} addEducation={this.addEducation} deleteWork={this.deleteWork} addWork={this.addWork} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work}/>}
             </div>
         )
     }
