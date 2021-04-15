@@ -22,9 +22,9 @@ function Preview(props) {
     }
     
     return (
-        <div id="Preview">
+        <div className="preview">
             <PersonalInfoPreview personalInfo={props.personalInfo} />
-            {props.education.length > 0 && <p>Education</p>}
+            {props.education.length > 0 && <p className="education">Education</p>}
             {educationPreviewFactory()}
             {props.work.length > 0 && <p>Work</p>}
             {workPreviewFactory()}

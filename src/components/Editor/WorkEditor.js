@@ -2,7 +2,7 @@ import React from 'react'
 
 function WorkEditor(props) {
     return (
-        <div className="main">
+        <div className="fieldStyling">
             <input type="text" data-worknumber={props.workNumber} data-type="work" placeholder="Company" value={props.work[0]} onChange={props.handleChange}></input>
             <input type="text" data-worknumber={props.workNumber} data-type="work" placeholder="Position" value={props.work[1]} onChange={props.handleChange}></input>
             <input type="text" data-worknumber={props.workNumber} data-type="work" placeholder="Location" value={props.work[2]} onChange={props.handleChange}></input>

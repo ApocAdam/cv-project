@@ -22,13 +22,13 @@ function Editor(props) {
     }
 
     return (
-        <div className="main">
-            <p className="centering">Personal Information</p>
+        <div className="fieldStyling">
+            <p className="textCentering">Personal Information</p>
             <PersonalInfoEditor personalInfo={props.personalInfo} handleChange={props.handleChange} />
-            <p className="centering">Education</p>
+            <p className="textCentering">Education</p>
             {educationEditorFactory()}
             <button onClick={props.addEducation}>Add</button>
-            <p className="centering">Work</p>
+            <p className="textCentering">Work</p>
             {workEditorFactory()}
             <button onClick={props.addWork}>Add</button>
         </div>

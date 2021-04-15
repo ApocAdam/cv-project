@@ -3,15 +3,12 @@ import React from 'react'
 function PersonalInfoPreview(props) {
     return (
         <div>
-            <p>Personal Information</p>
-            <ul>
-                <li>Name: {props.personalInfo[0]}</li>
-                <li>Phone: {props.personalInfo[1]}</li>
-                <li>Address: {props.personalInfo[2]}</li>
-                <li>Email: {props.personalInfo[3]}</li>
-                <li>Github: {props.personalInfo[4]}</li>
-                <li>Linkedin: {props.personalInfo[5]}</li>
-            </ul>
+            <h1 className="name">{props.personalInfo[0]}</h1>
+            <section className="phone">{props.personalInfo[1]}</section>
+            <section className="address">{props.personalInfo[2]}</section>
+            <section className="email">{props.personalInfo[3]}</section>
+            <section className="github">{props.personalInfo[4]}</section>
+            <section className="linkedin">{props.personalInfo[5]}</section>
         </div>
     )
 }

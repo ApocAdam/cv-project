@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.main {
+.fieldStyling {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     display: grid;
 }
 
-.centering {
+.textCentering {
     text-align: center;
 }
 
@@ -24,4 +24,33 @@
 
 .mainColour {
     background-color: lightgray;
+    justify-items: center;
+}
+
+.preview {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.name {
+    padding-top: 65px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.phone, .address, .email, .github, .linkedin {
+    text-align: center;
+}
+
+.education {
+    text-decoration: underline;
+    margin-left: 20mm;
+    margin-right: 20mm;
+    font-size: 1.5em;
+}
+
+.margin {
+    margin-left: 20mm;
 }
