@@ -34,7 +34,6 @@ export default class Main extends Component {
         }
     
         this.state = {
-             view: true, // true represents editor mode
              personalInfo: ["", "", "", "", "" , ""],
              education: [],
              work: []
@@ -119,11 +118,14 @@ export default class Main extends Component {
 
         return (
             <div className="main">
-                <div className="test">
-                    <button className="displayButtons" onClick={this.loadEditor}>Editor</button>
-                    <button className="displayButtons" onClick={this.loadPreview}>Preview</button>
+                <div className="sideBySide">
+                    <div className="editorContainer">
+                        <Editor personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work} deleteEducation={this.deleteEducation} addEducation={this.addEducation} deleteWork={this.deleteWork} addWork={this.addWork} handleChange={this.handleChange}/>
+                    </div>
+                    <div className="previewContainer">
+                        <Preview personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work}/>
+                    </div>
                 </div>
-                {this.state.view ? <Editor personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work} deleteEducation={this.deleteEducation} addEducation={this.addEducation} deleteWork={this.deleteWork} addWork={this.addWork} handleChange={this.handleChange}/> : <Preview personalInfo={this.state.personalInfo} education={this.state.education} work={this.state.work}/>}
             </div>
         )
     }

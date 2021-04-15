@@ -27,10 +27,10 @@ function Editor(props) {
             <PersonalInfoEditor personalInfo={props.personalInfo} handleChange={props.handleChange} />
             <p className="editorHeader">Education</p>
             {educationEditorFactory()}
-            <button className="" onClick={props.addEducation}>Add</button>
+            <button className="addButtons" onClick={props.addEducation}>Add</button>
             <p className="editorHeader">Work</p>
             {workEditorFactory()}
-            <button onClick={props.addWork}>Add</button>
+            <button className="addButtons" onClick={props.addWork}>Add</button>
         </div>
     )
 }

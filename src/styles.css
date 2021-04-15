@@ -8,18 +8,21 @@
     flex: 0 1 auto;
     background-color: deepskyblue;
     text-align: center;
+    font-size: 30px;
 }
 
 .main {
     flex: 1 1 auto;
     background-color: lightgray;
     justify-items: center;
+    padding-bottom: 30px;
 }
 
 .footer {
     flex: 0 1 auto;
     background-color: deepskyblue;
     text-align: center;
+    font-size: 30px;
 }
 
 .fieldStyling {
@@ -47,7 +50,7 @@
 .preview {
     width: 21cm;
     height: 29.7cm;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: white;
 }
 
@@ -89,11 +92,32 @@
     border-style: solid;
 }
 
-.addButtons, .deleteButtons {
+.deleteButtons {
     width: 100%;
     font-size: 25px;
 }
 
+.addButtons {
+    font-size: 25px;
+} 
+
 .displayButtons {
+    font-size: 30px;
+}
+
+.sideBySide {
+    padding-top: 20px;
+    display: flex;
+}
+
+.editorContainer {
+    padding-left: 250px;
+}
+
+.previewContainer {
+    margin: 0 auto;
+}
+
+.editorHeader {
     font-size: 30px;
 }
